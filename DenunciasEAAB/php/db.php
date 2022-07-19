@@ -3,7 +3,7 @@
 function conn () {
     $hostname = "localhost";
     $usuariodb = "id19276476_acueducto";
-    $passworddb = "@6ZyK+WQ9S98F7y+";
+    $passworddb = "iL75aqtK?5U%RjK=";
     $dbname = "id19276476_acuecucto";
 
     $conectar = mysqli_connect($hostname, $usuariodb, $passworddb, $dbname);
