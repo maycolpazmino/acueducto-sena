@@ -1,0 +1,150 @@
+/*
+************  CONSULTAS POR TABLAS  ************
+*/
+
+SELECT doc_iden_id, nombres_denunciante, apellidos_denunciante, ciudad_denunciante, direccion_denunciante, email_denunciante, celular_denunciante FROM denunciante WHERE numero_id =1010184646;
+
+SELECT doc_denuncia_id as "Item", nombre_doc_denuncia as "Documento Denuncia" FROM documento_denuncia;
+
+SELECT doc_iden_id as "Item", nombre_doc_iden as "Documento de Identificación" FROM documento_identificacion;
+
+SELECT denunciante_id as "Item", doc_iden_id as "Documento de Identificación", numero_id as "Número de Identificación",
+nombres_denunciante as "Nombres", apellidos_denunciante as "Apellidos", ciudad_denunciante as "Ciudad",
+direccion_denunciante as "Dirección", email_denunciante as "Email", celular_denunciante as "Celular" FROM denunciante;
+
+SELECT * FROM denunciante WHERE denunciante_id=1;
+
+SELECT consecutivo_denuncias as "Denuncia #", doc_denuncia_id as "Denuncia ID", descripcion_denuncia 
+as "Descripción Denuncia", solicitud_denuncia as "Se Solicita", fecha as "Fecha Radicación" FROM denuncias;
+
+SELECT consecutivo_denuncias, nombre_doc_denuncia, nombres_denunciante, 
+            apellidos_denunciante, nombre_doc_iden, 
+            numero_id, ciudad_denunciante, direccion_denunciante, email_denunciante, celular_denunciante , 
+            fecha, descripcion_denuncia, solicitud_denuncia FROM denuncias, denunciante, documento_denuncia, documento_identificacion
+            where (documento_denuncia.doc_denuncia_id = denuncias.doc_denuncia_id) 
+            AND (documento_identificacion.doc_iden_id = denunciante.doc_iden_id) 
+            AND (denunciante.denunciante_id = denuncias.denunciante_id) ;
+
+SELECT consecutivo_denuncias, nombre_doc_denuncia, nombres_denunciante, 
+            apellidos_denunciante, nombre_doc_iden, 
+            numero_id, ciudad_denunciante, direccion_denunciante, email_denunciante, celular_denunciante , 
+            fecha, descripcion_denuncia, solicitud_denuncia FROM denuncias, denunciante, documento_denuncia, documento_identificacion
+            where (documento_denuncia.doc_denuncia_id = denuncias.doc_denuncia_id) 
+            AND (documento_identificacion.doc_iden_id = denunciante.doc_iden_id) 
+            AND (denunciante.denunciante_id = denuncias.denunciante_id)
+            AND consecutivo_denuncias = 37;
+            
+/*
+************  CONSULTAS POR TIPO DE DENUNCIA  ************
+*/
+
+select nombre_doc_denuncia as "Documento Denuncia", nombres_denunciante as "Nombres Denunciante", 
+apellidos_denunciante as "Apellidos Denunciante", nombre_doc_iden as "Documento de Identificación", 
+numero_id as "Número de Identificación", descripcion_denuncia 
+as "Descripción Denuncia", solicitud_denuncia as "Se Solicita", fecha as "Fecha Radicación" 
+from denuncias, denunciante, documento_denuncia, documento_identificacion
+where (documento_denuncia.doc_denuncia_id = denuncias.doc_denuncia_id) 
+AND (documento_identificacion.doc_iden_id = denunciante.doc_iden_id) 
+AND (denunciante.denunciante_id = denuncias.denunciante_id); 
+
+select nombre_doc_denuncia as "Documento Denuncia", nombres_denunciante as "Nombres Denunciante", 
+apellidos_denunciante as "Apellidos Denunciante", nombre_doc_iden as "Documento de Identificación", 
+numero_id as "Número de Identificación", fecha as "Fecha Radicación" 
+from denuncias, denunciante, documento_denuncia, documento_identificacion
+where (documento_denuncia.doc_denuncia_id = denuncias.doc_denuncia_id) 
+AND (documento_identificacion.doc_iden_id = denunciante.doc_iden_id) 
+AND (denunciante.denunciante_id = denuncias.denunciante_id) 
+AND (nombre_doc_denuncia = "Acción de Tutela")
+AND (numero_id = 1010184646);
+
+select nombre_doc_denuncia as "Documento Denuncia", nombres_denunciante as "Nombres Denunciante", 
+apellidos_denunciante as "Apellidos Denunciante", nombre_doc_iden as "Documento de Identificación", 
+numero_id as "Número de Identificación", fecha as "Fecha Radicación" 
+from denuncias, denunciante, documento_denuncia, documento_identificacion
+where (documento_denuncia.doc_denuncia_id = denuncias.doc_denuncia_id) 
+AND (documento_identificacion.doc_iden_id = denunciante.doc_iden_id) 
+AND (denunciante.denunciante_id = denuncias.denunciante_id) 
+AND (nombre_doc_denuncia = "Proceso Penal");
+
+select nombre_doc_denuncia as "Documento Denuncia", nombres_denunciante as "Nombres Denunciante", 
+apellidos_denunciante as "Apellidos Denunciante", nombre_doc_iden as "Documento de Identificación", 
+numero_id as "Número de Identificación", fecha as "Fecha Radicación" 
+from denuncias, denunciante, documento_denuncia, documento_identificacion
+where (documento_denuncia.doc_denuncia_id = denuncias.doc_denuncia_id) 
+AND (documento_identificacion.doc_iden_id = denunciante.doc_iden_id) 
+AND (denunciante.denunciante_id = denuncias.denunciante_id) 
+AND (nombre_doc_denuncia = "Nulidades y Restablecimiento");
+
+select nombre_doc_denuncia as "Documento Denuncia", nombres_denunciante as "Nombres Denunciante", 
+apellidos_denunciante as "Apellidos Denunciante", nombre_doc_iden as "Documento de Identificación", 
+numero_id as "Número de Identificación", fecha as "Fecha Radicación" 
+from denuncias, denunciante, documento_denuncia, documento_identificacion
+where (documento_denuncia.doc_denuncia_id = denuncias.doc_denuncia_id) 
+AND (documento_identificacion.doc_iden_id = denunciante.doc_iden_id) 
+AND (denunciante.denunciante_id = denuncias.denunciante_id) 
+AND (nombre_doc_denuncia = "Reparaciones Directas");
+
+/*
+************  CONSULTAS POR TIPO DE IDENTIFICACIÓN  ************
+*/
+
+select nombre_doc_denuncia as "Documento Denuncia", nombres_denunciante as "Nombres Denunciante", 
+apellidos_denunciante as "Apellidos Denunciante", nombre_doc_iden as "Documento de Identificación", 
+numero_id as "Número de Identificación", fecha as "Fecha Radicación" 
+from denuncias, denunciante, documento_denuncia, documento_identificacion
+where (documento_denuncia.doc_denuncia_id = denuncias.doc_denuncia_id) 
+AND (documento_identificacion.doc_iden_id = denunciante.doc_iden_id) 
+AND (denunciante.denunciante_id = denuncias.denunciante_id) 
+AND (nombre_doc_iden = "Cedula de Ciudadania");
+
+select nombre_doc_denuncia as "Documento Denuncia", nombres_denunciante as "Nombres Denunciante", 
+apellidos_denunciante as "Apellidos Denunciante", nombre_doc_iden as "Documento de Identificación", 
+numero_id as "Número de Identificación", fecha as "Fecha Radicación" 
+from denuncias, denunciante, documento_denuncia, documento_identificacion
+where (documento_denuncia.doc_denuncia_denunciante_idid = denuncias.doc_denuncia_id) 
+AND (documento_identificacion.doc_iden_id = denunciante.doc_iden_id) 
+AND (denunciante.denunciante_id = denuncias.denunciante_id) 
+AND (nombre_doc_iden = "Tarjeta de identidad");
+
+select nombre_doc_denuncia as "Documento Denuncia", nombres_denunciante as "Nombres Denunciante", 
+apellidos_denunciante as "Apellidos Denunciante", nombre_doc_iden as "Documento de Identificación", 
+numero_id as "Número de Identificación", fecha as "Fecha Radicación" 
+from denuncias, denunciante, documento_denuncia, documento_identificacion
+where (documento_denuncia.doc_denuncia_id = denuncias.doc_denuncia_id) 
+AND (documento_identificacion.doc_iden_id = denunciante.doc_iden_id) 
+AND (denunciante.denunciante_id = denuncias.denunciante_id) 
+AND (nombre_doc_iden = "Pasaporte");
+
+select nombre_doc_denuncia as "Documento Denuncia", nombres_denunciante as "Nombres Denunciante", 
+apellidos_denunciante as "Apellidos Denunciante", nombre_doc_iden as "Documento de Identificación", 
+numero_id as "Número de Identificación", fecha as "Fecha Radicación" 
+from denuncias, denunciante, documento_denuncia, documento_identificacion
+where (documento_denuncia.doc_denuncia_id = denuncias.doc_denuncia_id) 
+AND (documento_identificacion.doc_iden_id = denunciante.doc_iden_id) 
+AND (denunciante.denunciante_id = denuncias.denunciante_id) 
+AND (nombre_doc_iden = "Cedula Extranjeria");
+
+/*
+************  CONSULTAS PARA LOGIN  ************
+*/
+
+SELECT username, password FROM acueducto.admin where username="Admin" and password="123456789";
+
+/*
+************  CONSULTAS PARA VARIAS  ************
+*/
+
+SELECT consecutivo_denuncias, nombre_doc_denuncia, nombres_denunciante, apellidos_denunciante, 
+nombre_doc_iden, numero_id, fecha FROM denuncias, denunciante, documento_denuncia, 
+documento_identificacion where (documento_denuncia.doc_denuncia_id = denuncias.doc_denuncia_id) 
+AND (documento_identificacion.doc_iden_id = denunciante.doc_iden_id) AND 
+(denunciante.denunciante_id = denuncias.denunciante_id) order by nombre_doc_denuncia;
+
+select consecutivo_denuncias from denuncias order by consecutivo_denuncias desc limit 1;
+
+SELECT consecutivo_denuncias, nombre_doc_denuncia, nombres_denunciante, apellidos_denunciante, 
+nombre_doc_iden, numero_id, ciudad_denunciante, direccion_denunciante, email_denunciante, 
+celular_denunciante, fecha, descripcion_denuncia, solicitud_denuncia FROM denuncias, denunciante, 
+documento_denuncia, documento_identificacion where (documento_denuncia.doc_denuncia_id = 
+denuncias.doc_denuncia_id) AND (documento_identificacion.doc_iden_id = denunciante.doc_iden_id) 
+AND (denunciante.denunciante_id = denuncias.denunciante_id) AND consecutivo_denuncias = 1 ;

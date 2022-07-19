@@ -1,0 +1,7 @@
+/*
+************  UPDATE  ************
+*/
+
+UPDATE denunciante SET nombres_denunciante='$nombres', apellidos_denunciante='$apellidos', 
+ciudad_denunciante='$ciudad', direccion_denunciante='$direccion', email_denunciante='$email', 
+celular_denunciante='$celular' WHERE denunciante_id='$idDenunciante'; 

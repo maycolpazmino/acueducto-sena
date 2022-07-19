@@ -1,0 +1,132 @@
+/*
+************  INSERCIÓN DOCUMENTO DE IDENTIFICACIÓN  ************
+*/
+
+insert into documento_identificacion ( nombre_doc_iden ) values ( "Cedula de Ciudadania" );
+insert into documento_identificacion ( nombre_doc_iden ) values ( "Tarjeta de Identidad" );
+insert into documento_identificacion ( nombre_doc_iden ) values ( "Pasaporte" );
+insert into documento_identificacion ( nombre_doc_iden ) values ( "Cedula Extranjeria" );
+
+/*
+************  INSERCIÓN TIPO DE DENUNCIA  ************
+*/
+
+insert into documento_denuncia ( nombre_doc_denuncia ) values ( "Derecho de Petición" );
+insert into documento_denuncia ( nombre_doc_denuncia ) values ( "Acción de Tutela" );
+insert into documento_denuncia ( nombre_doc_denuncia ) values ( "Proceso Penal" );
+insert into documento_denuncia ( nombre_doc_denuncia ) values ( "Nulidades y Restablecimiento" );
+insert into documento_denuncia ( nombre_doc_denuncia ) values ( "Reparación Directa" );
+
+/*
+************  INSERCIÓN MOCK DATA (DENUNCIANTES)  ************
+*/
+
+insert ignore into denunciante ( doc_iden_id, numero_id, nombres_denunciante, apellidos_denunciante, 
+ciudad_denunciante, direccion_denunciante, email_denunciante, celular_denunciante )
+values ( 1, "1010184646", "Maycol Eduardo", "Pazmiño Peña", "Bogotá", "Cra 92 # 151B - 86", 
+"maycol@backbase.com", 3143406491 );
+
+insert ignore into denunciante ( doc_iden_id, numero_id, nombres_denunciante, apellidos_denunciante, 
+ciudad_denunciante, direccion_denunciante, email_denunciante, celular_denunciante )
+values ( 1, "41593119", "Rosana", "Peña Ramirez", "Bogotá", "Cra 92 # 151B - 86", 
+"rosana@gmail.com", 3115474005 );
+
+insert ignore into denunciante ( doc_iden_id, numero_id, nombres_denunciante, apellidos_denunciante, 
+ciudad_denunciante, direccion_denunciante, email_denunciante, celular_denunciante )
+values ( 2, "521544432", "Juan Diego", "Toro Pineda", "Medellín", "Calle 5ta # 22 - 56", 
+"jtoro@alumnoeseit.com", 3214574125 );
+
+insert ignore into denunciante ( doc_iden_id, numero_id, nombres_denunciante, apellidos_denunciante, 
+ciudad_denunciante, direccion_denunciante, email_denunciante, celular_denunciante )
+values ( 2, "1012459865", "Cristian Camilo", "Acosta Sierra", "Santa Marta", "Cra 32 # 14 - 22", 
+"camilo_acosta@gmail.com", 3187454738 );
+
+insert ignore into denunciante ( doc_iden_id, numero_id, nombres_denunciante, apellidos_denunciante, 
+ciudad_denunciante, direccion_denunciante, email_denunciante, celular_denunciante )
+values ( 3, "59424785", "Dennis Andres", "Pazmiño Peña", "Bogotá", "Cra 7 # 21 - 17", 
+"dennis@avionnos.com", 3503248475 );
+
+insert ignore into denunciante ( doc_iden_id, numero_id, nombres_denunciante, apellidos_denunciante, 
+ciudad_denunciante, direccion_denunciante, email_denunciante, celular_denunciante )
+values ( 3, "214577486", "Pedro Fernando", "Juarez Sosa", "Cali", "Calle 23 # 23 - 87", 
+"pedrito@gmail.com", 3794641315 );
+
+insert ignore into denunciante ( doc_iden_id, numero_id, nombres_denunciante, apellidos_denunciante, 
+ciudad_denunciante, direccion_denunciante, email_denunciante, celular_denunciante )
+values ( 4, "78454477", "Gustavo", "Montero Chavez", "Bogotá", "Cra 12 # 124 - 58", 
+"gustavom@gyrodata.com", 3224457812 );
+
+insert ignore into denunciante ( doc_iden_id, numero_id, nombres_denunciante, apellidos_denunciante, 
+ciudad_denunciante, direccion_denunciante, email_denunciante, celular_denunciante )
+values ( 4, "12431645", "Miguel", "Cobarrubia Melo", "Medellín", "Cra 59 # 65 - 98", 
+"mcobarrubia@gyrodata.com", 2321454 );
+
+/*
+************  INSERCIÓN MOCK DATA (DENUNCIAS)  ************
+*/
+
+insert into denuncias ( doc_denuncia_id , denunciante_id , descripcion_denuncia , solicitud_denuncia , fecha ) 
+values ( 1, 1, "Solicitud pago prestaciones sociales por incumplimiento contractual", 
+"El contratista pretende el reconocimiento de prestaciones sociales" , "04-11-2022" );
+
+insert into denuncias ( doc_denuncia_id , denunciante_id , descripcion_denuncia , solicitud_denuncia , fecha )
+values ( 2, 2, "Pago quinquenio por tiempos laborados",
+"Que se efectue el pago conforme a la ley" , "04-01-2022" );
+
+insert into denuncias ( doc_denuncia_id , denunciante_id , descripcion_denuncia , solicitud_denuncia , fecha ) 
+values ( 3, 3, "Presento diploma falso para ocupación del cargo", 
+"Delito Falsedad en documento privado" , "19-02-2022" );
+
+insert into denuncias ( doc_denuncia_id , denunciante_id , descripcion_denuncia , solicitud_denuncia , fecha )
+values ( 2, 4, "Minimo Vital" , "Derecho al Minimo Vital" , "15-02-2021" );
+
+insert into denuncias ( doc_denuncia_id , denunciante_id , descripcion_denuncia , solicitud_denuncia , fecha )
+values ( 1, 5, "Solicitud Alcantarillado" , "Derecho a una vida digna" , "23-05-2018" );
+
+insert into denuncias ( doc_denuncia_id , denunciante_id , descripcion_denuncia , solicitud_denuncia , fecha )
+values ( 5 , 6, "Indemnizacion" , "Conciliacion Extrajudical" , "25-07-2020" );
+
+insert into denuncias ( doc_denuncia_id , denunciante_id , descripcion_denuncia , solicitud_denuncia , fecha )
+values ( 1, 7, "Hurtaron la tapa de alcantarilla del predio" , 
+"Solicitud Indemnización por caida en alcantarilla sin tapa" , "09-10-2020" );
+
+insert into denuncias ( doc_denuncia_id , denunciante_id , descripcion_denuncia , solicitud_denuncia , fecha )
+values ( 4, 8, "Que se declare nulo el acto administrativo", 
+"Que se declare la responsabilidad de la EAAB-ESP" , "23-07-2019" );
+
+ insert into denuncias ( doc_denuncia_id , denunciante_id , descripcion_denuncia , solicitud_denuncia , fecha )
+ values ( 2, 1, "Minimo Vital", "Solidaridad por parte de la EAAB exigiendo el derecho al minimo vital gratis",
+ "27-03-2019" );
+ 
+ insert into denuncias ( doc_denuncia_id , denunciante_id , descripcion_denuncia , solicitud_denuncia , fecha )
+ values ( 3, 8, "Denuncia Penal" , "Hurto tapa de Rejillas EAAB" , "28-06-2019" );
+ 
+ insert into denuncias ( doc_denuncia_id , denunciante_id , descripcion_denuncia , solicitud_denuncia , fecha )
+ values ( 5, 6, "Reparación por muerte de Hijo", 
+ "Indemnización por accidente de transito producido por un hueco" , "02-10-2018" );
+ 
+ insert into denuncias ( doc_denuncia_id , denunciante_id , descripcion_denuncia , solicitud_denuncia , fecha )
+ values ( 4, 4, "Multa de la Superintendencia de servicios publicos domiciliarios",
+ "Pago de multa interpuesta de resolucion" , "23-05-2019" );
+ 
+insert into denuncias ( doc_denuncia_id , denunciante_id , descripcion_denuncia , solicitud_denuncia , fecha )
+ values ( 3, 2, "veracidad de certificaciones sobre celebracion de contratos", 
+ "certificaciones sobre contratos" , "25-08-2018" );
+ 
+insert into denuncias ( doc_denuncia_id , denunciante_id , descripcion_denuncia , solicitud_denuncia , fecha )
+values ( 4, 3,  "Silencio Administrativo", "Resolucion que declara silencio Administrativo", "12-09-2021" );
+
+insert into denuncias ( doc_denuncia_id , denunciante_id , descripcion_denuncia , solicitud_denuncia , fecha )
+values ( 5, 5, "Reparacion por daños causados a inmueble" , "soluciono daño tubo madre" , "18-01-2018" );
+
+insert into denuncias ( doc_denuncia_id , denunciante_id , descripcion_denuncia , solicitud_denuncia , fecha )
+values ( 5, 7, "Reparacion por daños causados a mueble" , "Soluciono daño tubo madre de agua" , "18-01-2022" );
+
+insert into denuncias ( doc_denuncia_id , denunciante_id , descripcion_denuncia , solicitud_denuncia , fecha )
+values ( 2, 4,  "Reparacion por daños causados a mueble" , "Soluciono daño tubo madre de agua" , "19-08-2021" );
+
+/*
+************  INSERCIÓN MOCK DATA (DENUNCIAS)  ************
+*/
+
+insert into admin (username, password) values ( "Admin", "123456789");

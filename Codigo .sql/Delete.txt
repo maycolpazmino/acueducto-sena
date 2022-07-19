@@ -1,0 +1,5 @@
+/*
+************  UPDATE  ************
+*/
+
+DELETE FROM denuncias WHERE consecutivo_denuncias=$id;

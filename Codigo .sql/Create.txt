@@ -1,0 +1,55 @@
+/*
+************  CREACIÓN DE BASE DE DATOS  ************
+*/
+
+create schema acueducto;
+use acueducto;
+
+/*
+************  CREACIÓN DE TABLAS  ************
+*/
+
+create table documento_identificacion (
+doc_iden_id integer auto_increment not null,
+nombre_doc_iden varchar (50) unique not null,
+primary key ( doc_iden_id )
+);
+
+create table documento_denuncia (
+doc_denuncia_id integer unique auto_increment not null,
+nombre_doc_denuncia varchar (50) unique not null,
+primary key ( doc_denuncia_id )
+);
+
+create table denunciante (
+denunciante_id integer auto_increment not null,
+doc_iden_id integer not null,
+numero_id varchar (20) unique not null,
+nombres_denunciante varchar (50) not null,
+apellidos_denunciante varchar (50) not null,
+ciudad_denunciante varchar (50) not null,
+direccion_denunciante varchar (100) not null,
+email_denunciante varchar (100) not null,
+celular_denunciante bigint not null,
+primary key ( denunciante_id ),
+foreign key ( doc_iden_id ) references documento_identificacion ( doc_iden_id )
+);
+
+create table denuncias (
+consecutivo_denuncias integer auto_increment not null,
+doc_denuncia_id integer not null,
+denunciante_id integer not null,
+descripcion_denuncia varchar (500) not null,
+solicitud_denuncia varchar (500) not null,
+fecha varchar(15) not null,
+primary key ( consecutivo_denuncias ),
+foreign key ( doc_denuncia_id ) references documento_denuncia ( doc_denuncia_id ),
+foreign key ( denunciante_id ) references denunciante ( denunciante_id )
+);
+
+create table admin (
+admin_id integer auto_increment not null,
+username varchar (50) not null unique,
+password varchar (50) not null,
+primary key ( admin_id )
+);
