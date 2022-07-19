@@ -4,7 +4,7 @@ $conectar = conn();
 
 $id = $_GET['id'];
 
-$sqlSelect = "SELECT * FROM acueducto.denunciante WHERE denunciante_id=$id;";
+$sqlSelect = "SELECT * FROM denunciante WHERE denunciante_id=$id;";
 $sqlEdit = mysqli_query($conectar, $sqlSelect) or die("Bad Query: $sqlSelect");
 $row = mysqli_fetch_array($sqlEdit);
 ?>

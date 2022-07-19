@@ -24,11 +24,11 @@ $conectar = conn();
 
 
 if  (($tipoDenuncia == "") && ($tipoIdentificacion == "Documento de Identificación")) {
-    echo '<script type="text/javascript">alert("Debe seleccionar Tipo de Documento\nDebe seleccionar Tipo de Denuncia");window.location.href="usuarioNuevo.php";</script>'; 
+    echo '<script type="text/javascript">alert("Debe seleccionar Tipo de Documento\nDebe seleccionar Tipo de Denuncia");window.location.href="../index.php";</script>'; 
 } elseif ($tipoDenuncia == "") {
-    echo '<script type="text/javascript">alert("Debe seleccionar Tipo de Denuncia");window.location.href="usuarioNuevo.php";</script>';
+    echo '<script type="text/javascript">alert("Debe seleccionar Tipo de Denuncia");window.location.href="../index.php";</script>';
 } elseif ($tipoIdentificacion == "Documento de Identificación") {
-    echo '<script type="text/javascript">alert("Debe seleccionar Tipo de Documento");window.location.href="usuarioNuevo.php";</script>';
+    echo '<script type="text/javascript">alert("Debe seleccionar Tipo de Documento");window.location.href="../index.php";</script>';
  } {
     try {
         $sqlSelect = "SELECT denunciante_id FROM denunciante WHERE numero_id =$identificacion";
